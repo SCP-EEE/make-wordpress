@@ -28,8 +28,8 @@ configure: depend_install
 	sudo sed -i "s/;extension=openssl/extension=openssl/" /etc/php/php.ini
 	sudo patch /etc/nginx/nginx.conf nginx.conf.diff
 
-depend_install: clean
-	sudo xbps-install -y -f nginx php-fpm mysql dma pwgen php php-mysql
+depend_install: 
+	sudo xbps-install -y -f nginx php-fpm mysql dma pwgen php php-mysql mysql-client patch
 
 clean:
 	sudo ln -sf /etc/sv/mysqld /var/service/
