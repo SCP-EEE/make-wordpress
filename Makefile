@@ -29,7 +29,7 @@ configure: depend_install
 	sudo patch /etc/nginx/nginx.conf nginx.conf.diff
 
 depend_install: 
-	sudo xbps-install -y -f nginx php-fpm mysql dma pwgen php php-mysql mysql-client patch
+	sudo xbps-install -y -f nginx php-fpm mysql dma pwgen php php-mysql mysql-client patch php-gd
 
 clean:
 	sudo ln -sf /etc/sv/mysqld /var/service/
@@ -45,4 +45,4 @@ clean:
 	sudo rm -f /var/service/mysqld
 
 uninstall:
-	sudo xbps-remove -R php-fpm php-mysql nginx dma pwgen php
+	sudo xbps-remove -R php-fpm php-mysql nginx dma pwgen php php-gd mysql-client
